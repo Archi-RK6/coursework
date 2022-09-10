@@ -1,0 +1,1 @@
+INSERT cheques(num_of_tickets, total_cost, date_of_purchase, m_id_c, session_number_c) VALUES('$num_of_tickets', '$total_cost', CURDATE(), '$m_id','$session_number')

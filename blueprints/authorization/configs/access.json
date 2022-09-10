@@ -1,0 +1,26 @@
+{
+  "admin": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1",
+    "profile.get_sql2",
+    "basket.movies"
+  ],
+  "accounting": [
+    "",
+    "authorization.login_page",
+    "profile.index",
+    "profile.get_sql1",
+    "profile.get_sql2"
+  ],
+  "cashier": [
+    "",
+    "authorization.login_page",
+    "basket.movies"
+  ],
+  "unauthorized": [
+    "",
+    "authorization.login_page"
+  ]
+}

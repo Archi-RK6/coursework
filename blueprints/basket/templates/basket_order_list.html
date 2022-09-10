@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Basket</title>
+    <style>
+.white
+{
+  text-align: center;
+  list-style-position: inside;
+}
+.white a
+{
+   border-radius: 10px;
+   background: white;
+   color: black;
+   padding: 15px 30px;
+   position: relative;
+}
+.white a:before, .white a:after
+{
+   content: "";
+   display: inline-block;
+   position: absolute;
+   top: calc(50% - 5px);
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: black;
+   opacity: 0;
+   transition: .5s ease-in-out;
+}
+.white a:before
+{
+   left: 13px;
+}
+.white a:after
+{
+   right: 13px;
+}
+.white a:hover:before, .white a:hover:after
+{
+   opacity: 1;
+}
+a {
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 15px 25px;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+   transition: 0.4s ease-in-out;
+}
+h2{
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+    color:white;
+}
+h4{
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+    color:grey;
+}
+span {
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+    color:white;
+}
+body {
+    background-color: black !important;
+}
+</style>
+</head>
+<body>
+  {% import 'basket_utils.html' as utils %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h2>Список билетов</h2>
+              {% if items %}
+                {% for item in items %}
+                    {{ utils.render_item(item, show_form=True) }}
+                {% endfor %}
+              {% else %}
+                <h4>Нет доступных билетов</h4>
+              {% endif %}
+          </div>
+          <div class="col-md-5">
+              <h2>Ваша корзина</h2>
+              {% if basket %}
+                {% for item in basket %}
+                    {{ utils.render_item(item, show_form=False) }}
+                {% endfor %}
+              {% else %}
+                <h4>Корзина пуста</h4>
+              {% endif %}
+          </div>
+          <div class="col-md-2">
+              <div class="white">
+            <a href="clear">Очистить корзину</a>
+            <br>
+            <a href="buy">Купить</a>
+            <br>
+            <a href="/">Вернуться в главное меню</a>
+              </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

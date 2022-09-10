@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<style>
+.white
+{
+  text-align: center;
+  list-style-position: inside;
+}
+.white a
+{
+   border-radius: 10px;
+   background: white;
+   color: black;
+   padding: 15px 30px;
+   position: relative;
+}
+.white a:before, .white a:after
+{
+   content: "";
+   display: inline-block;
+   position: absolute;
+   top: calc(50% - 5px);
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: black;
+   opacity: 0;
+   transition: .5s ease-in-out;
+}
+.white a:before
+{
+   left: 13px;
+}
+.white a:after
+{
+   right: 13px;
+}
+.white a:hover:before, .white a:hover:after
+{
+   opacity: 1;
+}
+a {
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 15px 25px;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+   transition: 0.4s ease-in-out;
+}
+h3{
+   color:white;
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 15px 25px;
+   padding: 15px 20px;
+   font-size: 20px;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+   transition: 0.4s ease-in-out;
+}
+body {
+    background-color: black !important;
+}
+</style>
+<body>
+<div class="white">
+<h3>Введите месяц и год, для которых будет создан отчёт о выручке за деонстрацию фильмов.</h3>
+<form action="" method='POST'>
+    <input type="text" placeholder="month" name="month">
+    <input type="text" placeholder="year" name="year">
+    <input type="submit" value="Получить данные">
+</form>
+<br>
+<a href="/profile/">Вернуться в меню запросов</a>
+</div>
+</body>
+</html>

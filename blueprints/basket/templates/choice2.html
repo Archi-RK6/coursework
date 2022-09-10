@@ -1,0 +1,15 @@
+{% macro render_session(item) %}
+  <div class="white" style="border-style: solid; border-color: white; margin: 10px">
+    <p>
+      <span>Номер сеанса: {{ item['session_number']  }}; </span>
+      <span>Дата сеанса : {{ item['session_date'] }}; </span>
+      <span>Зал : {{ item['hall_name'] }}.</span>
+    </p>
+      <div>
+        <form action="" method="post">
+          <input type="submit" value="Выбрать">
+          <input type="hidden" name="chosen_session_number" value="{{ item['session_number'] }}">
+        </form>
+      </div>
+  </div>
+{% endmacro %}

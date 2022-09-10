@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+    .white
+    {
+      text-align: center;
+      list-style-position: inside;
+    }
+    .white a
+    {
+       border-radius: 10px;
+       background: white;
+       color: black;
+       padding: 15px 30px;
+       position: relative;
+    }
+    .white a:before, .white a:after
+    {
+       content: "";
+       display: inline-block;
+       position: absolute;
+       top: calc(50% - 5px);
+       width: 10px;
+       height: 10px;
+       border-radius: 50%;
+       background: black;
+       opacity: 0;
+       transition: .5s ease-in-out;
+    }
+    .white a:before
+    {
+       left: 13px;
+    }
+    .white a:after
+    {
+       right: 13px;
+    }
+    .white a:hover:before, .white a:hover:after
+    {
+       opacity: 1;
+    }
+    a {
+       display: inline-block;
+       text-decoration: none;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+       margin: 15px 25px;
+       padding: 15px 20px;
+       font-size: 20px;
+       font-weight: bold;
+       font-family: 'Montserrat', sans-serif;
+       transition: 0.4s ease-in-out;
+    }
+body {
+    background-color: black !important;
+}
+    </style>
+</head>
+<body>
+  <form class="white" action="" method="post">
+    <input type="text" name="login" placeholder="Login">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Войти">
+    <br>
+    <br>
+    <a href="/">Вернуться в главное меню</a>
+  </form>
+</body>
+</html>

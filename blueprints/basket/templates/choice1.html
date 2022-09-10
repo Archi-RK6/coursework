@@ -1,0 +1,17 @@
+{% macro render_movie(item) %}
+  <div class="white" style="border-style: solid; border-color: white; margin: 10px">
+    <p>
+      <span>Название: {{ item['title']  }}; </span>
+      <span>Режиссёр : {{ item['director'] }}; </span>
+      <span>Страна : {{ item['country_of_origin'] }}; </span>
+      <span>Продолжительность : {{ item['duration'] }}.</span>
+      <span>Жанр : {{ item['genre'] }}.</span>
+    </p>
+      <div>
+        <form action="" method="post">
+          <input type="submit" value="Выбрать">
+          <input type="hidden" name="m_id" value="{{ item['m_id'] }}">
+        </form>
+      </div>
+  </div>
+{% endmacro %}
